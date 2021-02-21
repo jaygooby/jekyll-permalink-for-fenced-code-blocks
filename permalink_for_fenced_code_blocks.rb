@@ -18,7 +18,7 @@ module CodePermalinksGenerator
     doc.css(".highlight code").each do |code_tag|
       num_ids += 1
       code_tag.set_attribute("id", "code-#{num_ids}")
-      code_tag.before "<button class='copy-code' aria-label='Copy to your clipboard' data-clipboard-target='#code-#{num_ids}'>📋 copy to clipboard</button>" unless ENV["NO_COPY_BUTTON"]
+      code_tag.before "<button class='copy-code' data-clipboard-target='#code-#{num_ids}'>copy to clipboard</button>" unless ENV["NO_COPY_BUTTON"]
     end
     page.output = doc.to_html
   end
